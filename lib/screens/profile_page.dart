@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:task3/themes/app_theme.dart';
+import 'package:task3/widgets/friends_widget.dart';
 import 'package:task3/widgets/type_item.dart';
 import 'package:task3/widgets/types_widget.dart';
 
@@ -46,11 +47,17 @@ class _ProfilePageState extends State<ProfilePage> {
       child: ListView(
         children: [
           _buildProfileAvatar(),
-          SizedBox(height: 24),
-          Divider(color: AppColors.red700),
-          SizedBox(height: 12),
+          const SizedBox(height: 24),
+          Divider(color: AppColors.black.withOpacity(0.08)),
+          const SizedBox(height: 12),
           Text('Select types', style: Theme.of(context).textTheme.subtitle1),
           Types(),
+          const SizedBox(height: 12),
+          Divider(color: AppColors.black.withOpacity(0.08)),
+          const SizedBox(height: 12),
+          Text('Friends', style: Theme.of(context).textTheme.subtitle1),
+          const SizedBox(height: 12),
+          Friends(),
         ],
       ),
     );
@@ -64,11 +71,10 @@ class _ProfilePageState extends State<ProfilePage> {
           width: 118,
           height: 118,
           child: CircleAvatar(
-            radius: 30,
             backgroundImage: CachedNetworkImageProvider(profileAvatar),
           ),
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         Text('Tiana Rosser', style: Theme.of(context).textTheme.subtitle1),
         Text('Developer', style: Theme.of(context).textTheme.caption),
       ],

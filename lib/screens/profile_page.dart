@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:task3/themes/app_theme.dart';
+import 'package:task3/widgets/button.dart';
 import 'package:task3/widgets/friends_widget.dart';
 import 'package:task3/widgets/type_item.dart';
 import 'package:task3/widgets/types_widget.dart';
@@ -58,6 +59,15 @@ class _ProfilePageState extends State<ProfilePage> {
           Text('Friends', style: Theme.of(context).textTheme.subtitle1),
           const SizedBox(height: 12),
           Friends(),
+          const SizedBox(height: 18),
+          Button(
+            isIcon: true,
+            icon: Icon(Icons.add),
+            text: 'ADD FRIEND',
+            borderColor: AppColors.black.withOpacity(0.12),
+            backgroundColor: AppColors.white,
+            textColor: AppColors.gray900,
+          ),
         ],
       ),
     );

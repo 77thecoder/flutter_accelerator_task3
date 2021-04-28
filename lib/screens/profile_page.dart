@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:task3/themes/app_theme.dart';
 import 'package:task3/widgets/button.dart';
 import 'package:task3/widgets/friends_widget.dart';
+import 'package:task3/widgets/medias.dart';
 import 'package:task3/widgets/type_item.dart';
 import 'package:task3/widgets/types_widget.dart';
 
@@ -68,6 +69,11 @@ class _ProfilePageState extends State<ProfilePage> {
             backgroundColor: AppColors.white,
             textColor: AppColors.gray900,
           ),
+          const SizedBox(height: 12),
+          Divider(color: AppColors.black.withOpacity(0.08)),
+          Text('My media', style: Theme.of(context).textTheme.subtitle1),
+          const SizedBox(height: 18),
+          Medias(),
         ],
       ),
     );

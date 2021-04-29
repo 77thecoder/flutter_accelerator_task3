@@ -3,28 +3,25 @@ import 'package:task3/themes/app_theme.dart';
 import 'package:task3/widgets/friend_item.dart';
 
 class Friends extends StatelessWidget {
+  //TODO move out of class and make const, not final
   final List<FriendItem> friends = [
     FriendItem(
-      image:
-          'https://unsplash.com/photos/P7yvmajPvkM/download?force=true&w=640',
+      image: 'https://unsplash.com/photos/P7yvmajPvkM/download?force=true&w=640',
       name: 'Corey George',
       profession: 'Developer',
     ),
     FriendItem(
-      image:
-          'https://unsplash.com/photos/FSsDeev6Ico/download?force=true&w=640',
+      image: 'https://unsplash.com/photos/FSsDeev6Ico/download?force=true&w=640',
       name: 'Ahmad Vetrovs',
       profession: 'Developer',
     ),
     FriendItem(
-      image:
-          'https://unsplash.com/photos/Ju--S80ezyU/download?force=true&w=640',
+      image: 'https://unsplash.com/photos/Ju--S80ezyU/download?force=true&w=640',
       name: 'Cristofer Workman',
       profession: 'Developer',
     ),
     FriendItem(
-      image:
-          'https://unsplash.com/photos/XttWKETqCCQ/download?force=true&w=640',
+      image: 'https://unsplash.com/photos/XttWKETqCCQ/download?force=true&w=640',
       name: 'Tiana Korsgaard',
       profession: 'Developer',
     ),
@@ -33,11 +30,11 @@ class Friends extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //TODO unnecessary containers.
       child: ListView.separated(
-        separatorBuilder: (BuildContext context, int index) =>
-            _buildSeparator(context),
+        separatorBuilder: (BuildContext context, int index) => _buildSeparator(context),
         shrinkWrap: true,
-        // padding: EdgeInsets.symmetric(vertical: 10),
+        // padding: EdgeInsets.symmetric(vertical: 10),  //TODO do you need this comment
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
@@ -49,11 +46,13 @@ class Friends extends StatelessWidget {
     );
   }
 
+  //TODO make widget, not function. Use as constant
   Widget _buildSeparator(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
+          //TODO use SizedBox to set size, not container
           width: MediaQuery.of(context).size.width * 0.78,
           child: Divider(
             color: AppColors.black.withOpacity(0.08),

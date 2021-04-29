@@ -20,6 +20,7 @@ class FriendItem extends StatelessWidget {
       child: Row(
         children: [
           Container(
+            //TODO use SizedBox to set size, not container
             width: 40,
             height: 40,
             child: CircleAvatar(

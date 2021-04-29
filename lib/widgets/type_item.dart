@@ -28,10 +28,12 @@ class TypeItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: selected ? backgroundColor.withOpacity(0.15) : backgroundColor.withOpacity(0.08),
         border: border
-          ? Border.all(
-              color: border ? borderColor.withOpacity(0.3) : backgroundColor.withOpacity(0),
-            )
-          : null,
+            ? Border.all(
+                color: border
+                    ? borderColor.withOpacity(0.3)
+                    : backgroundColor.withOpacity(0), //TODO you can pass null as param, so no border will be used
+              )
+            : null,
         borderRadius: BorderRadius.circular(68),
       ),
       child: Text(
@@ -39,7 +41,7 @@ class TypeItem extends StatelessWidget {
         style: selected
             ? Theme.of(context)
                 .textTheme
-                .bodyText2!
+                .bodyText2! //TODO it's possible to set bodyText2 as null, and you will get crash here.
                 .copyWith(color: AppColors.violet500)
             : Theme.of(context).textTheme.bodyText2!.copyWith(
                   color: AppColors.black.withOpacity(0.38),

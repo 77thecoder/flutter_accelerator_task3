@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Button extends StatelessWidget {
   final String text;
   final bool isIcon;
-  final Icon icon;
+  final Icon icon; //TODO remove isIcon bool flag, make icon optional.
   final Color borderColor;
   final Color textColor;
   final Color backgroundColor;
@@ -35,6 +35,7 @@ class Button extends StatelessWidget {
             style: TextStyle(color: textColor),
           ),
           if (isIcon) ...{
+            //TODO check if icon is not null to add section
             const SizedBox(width: 12),
             icon
           },

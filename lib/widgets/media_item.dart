@@ -5,8 +5,8 @@ import 'package:task3/widgets/icon_delete.dart';
 
 class MediaItem extends StatelessWidget {
   final String imageUrl;
-  final double width;
-  final double height;
+  final double width; //TODO unused param
+  final double height; //TODO unused param
 
   const MediaItem({
     Key? key,

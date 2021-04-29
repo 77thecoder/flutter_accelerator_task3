@@ -6,6 +6,7 @@ import 'package:task3/widgets/friends_widget.dart';
 import 'package:task3/widgets/medias.dart';
 import 'package:task3/widgets/types_widget.dart';
 
+//TODO const modifiers
 class ProfilePage extends StatefulWidget {
   final String title;
 
@@ -16,8 +17,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final String profileAvatar =
-      'https://unsplash.com/photos/BteCp6aq4GI/download?force=true&w=640';
+  final String profileAvatar = 'https://unsplash.com/photos/BteCp6aq4GI/download?force=true&w=640';
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +47,11 @@ class _ProfilePageState extends State<ProfilePage> {
       padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
       child: ListView(
         children: [
-          _buildProfileAvatar(),
+          _buildProfileAvatar(), //TODO make widgets, as Types, Friends
           const SizedBox(height: 24),
-          Divider(color: AppColors.black.withOpacity(0.08)),
+          Divider(color: AppColors.black.withOpacity(0.08)), //TODO extract divider as widget
           const SizedBox(height: 12),
-          Text('Select types', style: Theme.of(context).textTheme.subtitle1),
+          Text('Select types', style: Theme.of(context).textTheme.subtitle1), //TODO Also can be widget
           Types(),
           const SizedBox(height: 12),
           Divider(color: AppColors.black.withOpacity(0.08)),
@@ -74,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 18),
           Medias(),
           SizedBox(height: 16),
-          _buildButtons(),
+          _buildButtons(), //TODO make widgets, as Types, Friends
         ],
       ),
     );
@@ -82,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget _buildProfileAvatar() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center, //TODO Avoid redundant argument values.
       children: [
         Container(
           width: 118,
@@ -108,7 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
               width: 156,
               child: Button(
                 text: 'DELETE',
-                isIcon: false,
+                isIcon: false, //TODO redundant param
                 icon: Icon(Icons.delete),
                 borderColor: AppColors.violet500,
                 textColor: AppColors.white,

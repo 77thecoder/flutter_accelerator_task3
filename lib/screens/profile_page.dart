@@ -4,7 +4,6 @@ import 'package:task3/themes/app_theme.dart';
 import 'package:task3/widgets/button.dart';
 import 'package:task3/widgets/friends_widget.dart';
 import 'package:task3/widgets/medias.dart';
-import 'package:task3/widgets/type_item.dart';
 import 'package:task3/widgets/types_widget.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -74,6 +73,8 @@ class _ProfilePageState extends State<ProfilePage> {
           Text('My media', style: Theme.of(context).textTheme.subtitle1),
           const SizedBox(height: 18),
           Medias(),
+          SizedBox(height: 16),
+          _buildButtons(),
         ],
       ),
     );
@@ -93,6 +94,44 @@ class _ProfilePageState extends State<ProfilePage> {
         const SizedBox(height: 24),
         Text('Tiana Rosser', style: Theme.of(context).textTheme.subtitle1),
         Text('Developer', style: Theme.of(context).textTheme.caption),
+      ],
+    );
+  }
+
+  Widget _buildButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Column(
+          children: [
+            Container(
+              width: 156,
+              child: Button(
+                text: 'DELETE',
+                isIcon: false,
+                icon: Icon(Icons.delete),
+                borderColor: AppColors.violet500,
+                textColor: AppColors.white,
+                backgroundColor: AppColors.violet500,
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            Container(
+              width: 156,
+              child: Button(
+                text: 'ADD',
+                isIcon: false,
+                icon: Icon(Icons.add),
+                borderColor: AppColors.black.withOpacity(0.12),
+                textColor: AppColors.violet500,
+                backgroundColor: AppColors.white,
+              ),
+            ),
+          ],
+        )
       ],
     );
   }

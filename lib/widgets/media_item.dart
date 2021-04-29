@@ -19,8 +19,6 @@ class MediaItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
-        width: 96,
-        height: 96,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           border: Border.all(color: AppColors.white),

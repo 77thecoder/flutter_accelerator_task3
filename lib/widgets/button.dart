@@ -25,7 +25,7 @@ class Button extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         border: Border.all(color: borderColor),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(4),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -34,8 +34,10 @@ class Button extends StatelessWidget {
             text,
             style: TextStyle(color: textColor),
           ),
-          const SizedBox(width: 12),
-          icon,
+          if (isIcon) ...{
+            const SizedBox(width: 12),
+            icon
+          },
         ],
       ),
     );

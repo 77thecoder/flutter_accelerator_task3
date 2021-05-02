@@ -73,7 +73,7 @@ class _ProfilePageState extends State<ProfilePage> {
           Text('My media', style: Theme.of(context).textTheme.subtitle1),
           const SizedBox(height: 18),
           Medias(),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _buildButtons(),
         ],
       ),

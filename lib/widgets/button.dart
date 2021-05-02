@@ -34,7 +34,7 @@ class Button extends StatelessWidget {
             text,
             style: TextStyle(color: textColor),
           ),
-          if (isIcon) ...{
+          if (isIcon != null && isIcon) ...{
             const SizedBox(width: 12),
             icon
           },

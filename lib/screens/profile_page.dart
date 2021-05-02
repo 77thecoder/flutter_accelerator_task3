@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:task3/themes/app_theme.dart';
-import 'package:task3/widgets/button.dart';
 import 'package:task3/widgets/friends_widget.dart';
 import 'package:task3/widgets/medias.dart';
 import 'package:task3/widgets/types_widget.dart';
@@ -60,13 +59,26 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 12),
           Friends(),
           const SizedBox(height: 18),
-          Button(
-            isIcon: true,
+          ElevatedButton.icon(
+            onPressed: () => print('onPressed Add Friend'),
             icon: Icon(Icons.add),
-            text: 'ADD FRIEND',
-            borderColor: AppColors.black.withOpacity(0.12),
-            backgroundColor: AppColors.white,
-            textColor: AppColors.gray900,
+            style: ButtonStyle(
+              backgroundColor:
+                  MaterialStateProperty.all<Color>(AppColors.white),
+              foregroundColor:
+                  MaterialStateProperty.all<Color>(AppColors.black),
+              elevation: MaterialStateProperty.all<double>(0),
+              side: MaterialStateProperty.all<BorderSide>(
+                BorderSide(
+                  color: AppColors.black.withOpacity(0.12),
+                  width: 1,
+                ),
+              ),
+            ),
+            label: Text(
+              'ADD FRIEND',
+              style: TextStyle(color: AppColors.gray900),
+            ),
           ),
           const SizedBox(height: 12),
           Divider(color: AppColors.black.withOpacity(0.08)),
@@ -106,13 +118,21 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             Container(
               width: 156,
-              child: Button(
-                text: 'DELETE',
-                isIcon: false,
-                icon: Icon(Icons.delete),
-                borderColor: AppColors.violet500,
-                textColor: AppColors.white,
-                backgroundColor: AppColors.violet500,
+              child: ElevatedButton(
+                child: Text(
+                  'DELETE',
+                  style: TextStyle(color: AppColors.white),
+                ),
+                style: ButtonStyle(
+                  elevation: MaterialStateProperty.all<double>(0),
+                  backgroundColor:
+                    MaterialStateProperty.all<Color>(AppColors.violet500),
+                  foregroundColor:
+                    MaterialStateProperty.all<Color>(AppColors.white),
+                ),
+                onPressed: () {
+                  print('Pressed Delete');
+                },
               ),
             ),
           ],
@@ -121,13 +141,25 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             Container(
               width: 156,
-              child: Button(
-                text: 'ADD',
-                isIcon: false,
-                icon: Icon(Icons.add),
-                borderColor: AppColors.black.withOpacity(0.12),
-                textColor: AppColors.violet500,
-                backgroundColor: AppColors.white,
+              child: ElevatedButton(
+                onPressed: () => print('onPressed Add'),
+                style: ButtonStyle(
+                  backgroundColor:
+                    MaterialStateProperty.all<Color>(AppColors.white),
+                  foregroundColor:
+                    MaterialStateProperty.all<Color>(AppColors.black),
+                  elevation: MaterialStateProperty.all<double>(0),
+                  side: MaterialStateProperty.all<BorderSide>(
+                    BorderSide(
+                      color: AppColors.black.withOpacity(0.12),
+                      width: 1,
+                    ),
+                  ),
+                ),
+                child: Text(
+                  'ADD',
+                  style: TextStyle(color: AppColors.violet500),
+                ),
               ),
             ),
           ],
